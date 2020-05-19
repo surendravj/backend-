@@ -34,7 +34,6 @@ mongoose.connect(process.env.DATABASE,
     .then(() => console.log('DB Connected...'))
     .catch(e => console.log(e))
 
-
 // routing path
 app.use('/api', auth);
 app.use('/api', user);
