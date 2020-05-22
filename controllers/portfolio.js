@@ -27,3 +27,14 @@ exports.getComments = (req, res) => {
         }
     })
 }
+
+
+exports.deleteComment = (req, res) => {
+    const id = req.params.id;
+    portfolioDb.deleteOne({ _id: id }).exec((err, data) => {
+        if (err) {
+            return res.status(400).json({ error: "Something went wrong" });
+        }
+        return res.status(200).json({ success: "Successfully deleted the comment" });
+    })
+}
